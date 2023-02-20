@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Task - 1 Run a scrip to create a file
+      become: true
+      shell: echo “This text has been added by custom script” > /tmp.1.txt 

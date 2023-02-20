@@ -1,0 +1,11 @@
+- name: Update ubuntu
+  become: True
+  apt: 
+    update_cache: yes
+    state: latest
+    cache_valid_time: 432000
+
+- name: apache install
+  become: True
+  apt: name=apache2 state=present
+  

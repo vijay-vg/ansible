@@ -1,0 +1,32 @@
+- name: Update ubuntu
+  become: True
+  apt:
+    update_cache: yes
+    state: latest
+    cache_valid_time: 432000
+
+- name: inventry host name
+  debug: var=inventory_hostname
+
+- name: host name
+  debug: var=ansible_hostname
+
+- name: host id
+  debug: var=ansible_host
+
+- name: apache install
+  become: True
+  apt: 
+    name: apache2 
+    state: present
+  #when: ansible_host == '192.168.29.29'
+  when: inventory_hostname == 'slave1'
+
+
+- name: Install nginx
+  become: True
+  apt:
+    name: nginx
+    state: present
+  #when: ansible_host == '192.168.29.162'
+  when: inventory_hostname == 'slave2'

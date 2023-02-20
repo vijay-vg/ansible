@@ -1,0 +1,17 @@
+slave1 ansible_host=slave1 ansible_connection=ssh ansible_ssh_pass=Devops@30 ansible_user=clouduser ansible_sudo_pass=Devops@30
+slave2 ansible_host=slave2 ansible_connection=ssh ansible_ssh=Devops@30 ansible_user=clouduser ansible_sudo_pass=Devops@30
+slave3 ansible_host=slave1 ansible_connection=ssh ansible_ssh_pass=Devops@30 ansible_user=clouduser ansible_sudo_pass=Devops@30
+slave4 ansible_host=slave2 ansible_connection=ssh ansible_ssh=Devops@30 ansible_user=clouduser ansible_sudo_pass=Devops@30
+slave5 ansible_host=slave2 ansible_connection=ssh ansible_ssh=Devops@30 ansible_user=clouduser ansible_sudo_pass=Devops@30
+
+
+
+[test]
+slave1
+slave2
+
+
+[prod]
+slave3
+slave4
+slave5

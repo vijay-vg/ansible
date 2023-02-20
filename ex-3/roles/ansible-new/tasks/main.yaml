@@ -1,0 +1,28 @@
+- name: Update ubuntu
+  become: True
+  apt:
+    update_cache: yes
+    state: latest
+    cache_valid_time: 432000
+
+- name: apache install
+  become: True
+  apt: 
+    name: apache2 
+    state: present
+  when: ansible_host == 'slave1'
+
+- name: Install nginx
+  become: True
+  apt:
+    name: nginx
+    state: present
+  when: ansible_host == 'slave2'
+
+- name: update index file
+  become: True
+  copy:
+     src: files/index.html
+     dest: /var/www/html/index.nginx-debian.html
+  when: ansible_host == 'slave2'
+  notify: restart nginx

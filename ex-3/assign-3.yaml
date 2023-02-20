@@ -1,0 +1,5 @@
+-
+  name: install nginx & apache2 on slave nodes 
+  hosts: all
+  roles:
+    - ansible-new

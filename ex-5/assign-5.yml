@@ -1,0 +1,4 @@
+- name: configure nodes for assignment 5
+  hosts: test:prod
+  roles:
+   - conf_java_mysql

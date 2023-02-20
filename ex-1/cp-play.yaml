@@ -1,0 +1,16 @@
+-
+ name: copy file test from ctrl node to slaves
+ hosts: all
+ tasks:
+     - name: copy from sorce to dest
+       copy:
+               src: /tmp/sampletxt.txt
+               dest: /tmp/sample.txt
+
+       register: result
+     - name: mail the client
+       mail: 
+         to: vijayakumarvellingiri@outlook.com
+         subject: hello frm ansible
+         body: hey Dude
+

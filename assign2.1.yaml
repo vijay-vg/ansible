@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - name: Task - 1 Run a scrip to create a file
+      become: true
+      script: create_txt.sh 

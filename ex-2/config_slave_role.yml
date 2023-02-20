@@ -1,0 +1,8 @@
+- name: install apache2 on node through ansible roles
+  hosts: slave1
+  roles:
+    - apache2
+- name: install nginx on node  through ansible roles
+  hosts: slave2
+  roles:
+    - nginx

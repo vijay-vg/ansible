@@ -1,0 +1,45 @@
+- name: play for looping 
+  hosts: all
+  vars:
+       - name:
+            - vijay
+            - vijay
+            - vijay
+            - vijay
+            - vijay
+            - vijay
+            - vijay
+            - vijay
+       - role:
+            - devop
+            - devop
+            - devop
+            - devop
+            - devop
+            - devop
+            - devop
+            - devop
+            - devop
+  tasks: 
+        - name: make a echo the name
+          command: echo "{{item}}"
+          with_items: "{{name}}"
+        - name: make a echo the role
+          command: echo "{{item}}"
+          with_items: "{{role}}"
+        - name: make a echo the data
+          command: echo "{{item}}"
+          loop: 
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi
+                - hi

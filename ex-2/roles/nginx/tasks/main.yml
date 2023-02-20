@@ -1,0 +1,12 @@
+- name: Update apt 
+  become: True
+  apt:
+    update_cache: yes
+    state: latest
+    cache_valid_time: 432000
+
+- name: Install nginx
+  become: True
+  apt:
+      name: nginx
+      state: present
